@@ -1,68 +1,372 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Empresa de Automação</title>
+    <title>Ferraz Automação Industrial</title>
+    <link rel="icon" type="image/x-icon" href="src/img/LOGO - FERRAZ.jpeg">
+    <!-- CSS Link -->
     <link rel="stylesheet" href="src/styles/style.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- FontAwesome CDN (for Brand Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <img src="src/img/LOGO - FERRAZ.jpeg" alt="Logo">
-            <h1>FERRAZ MANUTENÇÃO</h1>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header__container">
+            <a href="#home" class="header__logo">
+                <img src="src/img/LOGO - FERRAZ.jpeg" alt="Logo Ferraz" class="header__logo-img">
+                <span class="header__logo-text">FERRAZ</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link nav__link--active">HOME</a></li>
+                    <li class="nav__item"><a href="#sobre" class="nav__link">SOBRE MIM</a></li>
+                    <li class="nav__item"><a href="#servicos" class="nav__link">ESPECIALIDADES</a></li>
+                    <li class="nav__item"><a href="#projetos" class="nav__link">PROJETOS</a></li>
+                    <li class="nav__item"><a href="#contato" class="nav__link">CONTATO</a></li>
+                </ul>
+            </nav>
+            <a href="#orcamento" class="header__btn btn btn--primary">Solicitar Orçamento</a>
+            <button class="nav-toggle" aria-label="Abrir menu">
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Sobre Nós</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Otimizando seu Processo Industrial</h2>
-                <p>Nós fornecemos soluções de automação de ponta para empresas que buscam aumentar a eficiência, reduzir custos e melhorar a qualidade de seus produtos.</p>
-                <a href="#" class="btn">Saiba Mais</a>
-            </div>
-            <div class="hero-image">
-                <img src="src/img/pexels-bulat843-1243575272-33694019.jpg" alt="Automação Industrial">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero__overlay"></div>
+            <div class="hero__container">
+                <div class="hero__content">
+                    <div class="hero__tagline-wrapper">
+                        <span class="hero__tagline-line"></span>
+                        <span class="hero__tagline">ENGENHARIA E AUTOMAÇÃO</span>
+                    </div>
+                    <h1 class="hero__title">
+                        AUTOMAÇÃO INTELIGENTE <br>PARA AUMENTAR A <br><span
+                            class="hero__title--highlight">PRODUTIVIDADE</span> <br>DA SUA EMPRESA
+                    </h1>
+                    <p class="hero__bullets">
+                        Robôs Industriais • Injetoras • NR-12 • Retrofit • Programação CLP • IoT Industrial •
+                        Assistência Técnica
+                    </p>
+                    <a href="#orcamento" class="hero__btn btn btn--cta">
+                        SOLICITAR UM ORÇAMENTO <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section class="servicos">
-            <h2>Projetos Realizados</h2>
-            <div class="servicos-container">
-                <div class="servico">
-                    <img src="servico1.png" alt="Programação CLP">
-                    <h3>Programação CLP</h3>
-                    <p>Desenvolvemos e programamos Controladores Lógicos Programáveis para automação de processos industriais.</p>
+        <!-- Services Section -->
+        <section class="services" id="servicos">
+            <div class="services__container">
+                <h2 class="section-title">NOSSOS SERVIÇOS</h2>
+                <div class="services__grid">
+                    <!-- Card 1 -->
+                    <div class="service-card">
+                        <div class="service-card__icon-wrapper">
+                            <i data-lucide="cpu" class="service-card__icon"></i>
+                        </div>
+                        <h3 class="service-card__title">ROBÔS CARTESIANOS E ANTROPOMÓRFICOS</h3>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="service-card">
+                        <div class="service-card__icon-wrapper">
+                            <i data-lucide="network" class="service-card__icon"></i>
+                        </div>
+                        <h3 class="service-card__title">INTEGRAÇÃO EUROMAP</h3>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="service-card">
+                        <div class="service-card__icon-wrapper">
+                            <i data-lucide="code-2" class="service-card__icon"></i>
+                        </div>
+                        <h3 class="service-card__title">PROGRAMAÇÃO CLP & IHM</h3>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="service-card">
+                        <div class="service-card__icon-wrapper">
+                            <i data-lucide="refresh-cw" class="service-card__icon"></i>
+                        </div>
+                        <h3 class="service-card__title">RETROFIT E MODERNIZAÇÃO</h3>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="service-card">
+                        <div class="service-card__icon-wrapper">
+                            <i data-lucide="cog" class="service-card__icon"></i>
+                        </div>
+                        <h3 class="service-card__title">ENGENHARIA REVERSA</h3>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="service-card">
+                        <div class="service-card__icon-wrapper">
+                            <i data-lucide="shield-check" class="service-card__icon"></i>
+                        </div>
+                        <h3 class="service-card__title">ADEQUAÇÃO NR-12</h3>
+                    </div>
                 </div>
-                <div class="servico">
-                    <img src="servico2.png" alt="Criação IHM">
-                    <h3>Criação IHM</h3>
-                    <p>Criação de Interfaces Homem-Máquina personalizadas para monitoramento e controle de processos.</p>
+                <div class="services__actions">
+                    <a href="#servicos" class="btn btn--outline">VER TODOS OS SERVIÇOS</a>
                 </div>
-                <div class="servico">
-                    <img src="servico3.png" alt="Assistência Técnica">
-                    <h3>Assistência Técnica</h3>
-                    <p>Oferecemos assistência técnica especializada para garantir o bom funcionamento de seus sistemas de automação.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projetos">
+            <div class="projects__container">
+                <h2 class="section-title section-title--dark">PROJETOS REALIZADOS</h2>
+                <div class="projects__grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-card__header">
+                            <span class="project-card__category">INTEGRAÇÃO EUROMAP67</span>
+                            <i data-lucide="cpu" class="project-card__header-icon"></i>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="src/img/project_euromap.png" alt="Integração Euromap" class="project-card__img">
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__desc">
+                                Desenvolvimento de Interface Euromap67 em injetoras Haitian (KEBA), Comunicação ONBOARD
+                                e maior confiabilidade no processo.
+                            </p>
+                        </div>
+                    </article>
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-card__header">
+                            <span class="project-card__category">SISTEMA IOT INDUSTRIAL</span>
+                            <i data-lucide="share-2" class="project-card__header-icon"></i>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="src/img/project_iot.png" alt="Sistema IoT Industrial" class="project-card__img">
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__desc">
+                                Monitoramento online de máquinas e consumo energético em tempo real. Relatórios e
+                                gráficos acessíveis pelo celular e computador.
+                            </p>
+                        </div>
+                    </article>
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-card__header">
+                            <span class="project-card__category">ENGENHARIA REVERSA DE EPROM</span>
+                            <i data-lucide="binary" class="project-card__header-icon"></i>
+                        </div>
+                        <div class="project-card__img-container">
+                            <img src="src/img/project_eprom.png" alt="Engenharia Reversa de Eprom"
+                                class="project-card__img">
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__desc">
+                                Leitura, análise e reconstrução de memórias de CLPS para habilitação de funções e
+                                recuperação de equipamentos.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <div class="projects__actions">
+                    <a href="#projetos" class="btn btn--primary btn--shadow">VER MAIS PROJETOS</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="blog" id="blog">
+            <div class="blog__container">
+                <h2 class="section-title">ARTIGOS DO BLOG</h2>
+                <div class="blog__grid">
+                    <!-- Article 1 -->
+                    <article class="blog-card">
+                        <div class="blog-card__img-container">
+                            <img src="src/img/blog_cycle_time.png" alt="Tempo de ciclo de uma Injetora"
+                                class="blog-card__img">
+                        </div>
+                        <div class="blog-card__body">
+                            <h3 class="blog-card__title">Como reduzir o tempo de ciclo de uma Injetora</h3>
+                            <p class="blog-card__desc">
+                                Saiba quais parâmetros impactam diretamente a produtividade da sua linha.
+                            </p>
+                            <a href="#artigo-1" class="blog-card__link">
+                                Ler artigo <i data-lucide="arrow-right" class="blog-card__link-icon"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- Article 2 -->
+                    <article class="blog-card">
+                        <div class="blog-card__img-container">
+                            <img src="src/img/blog_inovance_error.png" alt="Erro E04.00 Inovance"
+                                class="blog-card__img">
+                        </div>
+                        <div class="blog-card__body">
+                            <h3 class="blog-card__title">Erro E04.00 em Inovance: principais causas</h3>
+                            <p class="blog-card__desc">
+                                Entenda como identificar e solucionar esse erro comum em inversores de frequência.
+                            </p>
+                            <a href="#artigo-2" class="blog-card__link">
+                                Ler artigo <i data-lucide="arrow-right" class="blog-card__link-icon"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- Article 3 -->
+                    <article class="blog-card">
+                        <div class="blog-card__img-container">
+                            <img src="src/img/blog_belt_drive.png" alt="Quebra de correia sincronizada"
+                                class="blog-card__img">
+                        </div>
+                        <div class="blog-card__body">
+                            <h3 class="blog-card__title">Como evitar quebra de correia sincronizada em Injetoras</h3>
+                            <p class="blog-card__desc">
+                                Dicas práticas de manutenção preditiva para aumentar a vida útil da correia.
+                            </p>
+                            <a href="#artigo-3" class="blog-card__link">
+                                Ler artigo <i data-lucide="arrow-right" class="blog-card__link-icon"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="blog__actions">
+                    <a href="#blog" class="btn btn--primary">VER TODOS OS ARTIGOS</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Connect Section -->
+        <section class="social-connect" id="redes-sociais">
+            <div class="social-connect__container">
+                <h2 class="section-title">CONECTE-SE CONOSCO</h2>
+                <p class="social-connect__subtitle">Fique por dentro das novidades, projetos e inovações industriais em
+                    nossas redes sociais</p>
+                <div class="social-connect__grid">
+                    <!-- Instagram Card -->
+                    <a href="https://www.instagram.com/ferraz_manutencao?igsh=MWx5anQ4aTUxM2JyYQ==" target="_blank"
+                        rel="noopener noreferrer" class="social-card social-card--instagram">
+                        <div class="social-card__glass"></div>
+                        <div class="social-card__icon-wrapper">
+                            <i class="fa-brands fa-instagram social-card__icon"></i>
+                        </div>
+                        <span class="social-card__name">Instagram</span>
+                        <span class="social-card__handle">@ferrazautomacao</span>
+                    </a>
+                    <!-- LinkedIn Card -->
+                    <a href="https://www.linkedin.com/in/ferraz-manutencao-388935422?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                        target="_blank" rel="noopener noreferrer" class="social-card social-card--linkedin">
+                        <div class="social-card__glass"></div>
+                        <div class="social-card__icon-wrapper">
+                            <i class="fa-brands fa-linkedin-in social-card__icon"></i>
+                        </div>
+                        <span class="social-card__name">LinkedIn</span>
+                        <span class="social-card__handle">Ferraz Automação</span>
+                    </a>
+                    <!-- Facebook Card -->
+                    <a href="https://www.facebook.com/share/1EGmH4iaQK/?mibextid=wwXIfr" target="_blank"
+                        rel="noopener noreferrer" class="social-card social-card--facebook">
+                        <div class="social-card__glass"></div>
+                        <div class="social-card__icon-wrapper">
+                            <i class="fa-brands fa-facebook-f social-card__icon"></i>
+                        </div>
+                        <span class="social-card__name">Facebook</span>
+                        <span class="social-card__handle">Ferraz Industrial</span>
+                    </a>
+                    <!-- X Card (Caso implementar o X, apenas descomentar e inserir o link)
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer"
+                        class="social-card social-card--x">
+                        <div class="social-card__glass"></div>
+                        <div class="social-card__icon-wrapper">
+                            <i class="fa-brands fa-x-twitter social-card__icon"></i>
+                        </div>
+                        <span class="social-card__name">X / Twitter</span>
+                        <span class="social-card__handle">@ferraz_industrial</span>
+                    </a> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Advantages Section -->
+        <section class="advantages">
+            <div class="advantages__container">
+                <div class="advantage-item">
+                    <i data-lucide="wrench" class="advantage-item__icon"></i>
+                    <span class="advantage-item__text">ATENDIMENTO TÉCNICO ESPECIALIZADO</span>
+                </div>
+                <div class="advantage-item">
+                    <i data-lucide="sliders" class="advantage-item__icon"></i>
+                    <span class="advantage-item__text">SOLUÇÕES SOB MEDIDA</span>
+                </div>
+                <div class="advantage-item">
+                    <i data-lucide="award" class="advantage-item__icon"></i>
+                    <span class="advantage-item__text">COMPROMISSO COM RESULTADO</span>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; FERRAZ MANUTENÇÃO. Todos os direitos reservados.</p>
+    <!-- Footer Section -->
+    <footer class="footer" id="contato">
+        <div class="footer__container">
+            <div class="footer__column footer__column--contacts">
+                <a href="https://wa.me/message/IFPDRYP2S3WLG1" class="footer__link">
+                    <i data-lucide="phone" class="footer__contact-icon"></i>
+                    <span>(11) 963 940 599</span>
+                </a>
+                <a href="mailto:ferrazmanutencaoo@gmail.com" class="footer__link">
+                    <i data-lucide="mail" class="footer__contact-icon"></i>
+                    <span>ferrazmanutencaoo@gmail.com</span>
+                </a>
+            </div>
+            <div class="footer__column footer__column--location">
+                <div class="footer__location-wrapper">
+                    <i data-lucide="map-pin" class="footer__location-icon"></i>
+                    <span>Salto - SP</span>
+                </div>
+            </div>
+            <div class="footer__column footer__column--socials">
+                <div class="footer__socials-row">
+                    <a href="https://www.instagram.com/ferraz_manutencao?igsh=MWx5anQ4aTUxM2JyYQ==" target="_blank"
+                        rel="noopener noreferrer" class="footer__social-icon" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://ferrazautomacao.com.br" target="_blank" rel="noopener noreferrer"
+                        class="footer__social-icon" aria-label="Website">
+                        <i data-lucide="globe"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ferraz-manutencao-388935422?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                        target="_blank" rel="noopener noreferrer" class="footer__social-icon" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <p class="footer__copyright">
+                    © 2026 Ferraz Automação Industrial. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/message/IFPDRYP2S3WLG1" class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
+        aria-label="Fale conosco no WhatsApp">
+        <i class="fa-brands fa-whatsapp whatsapp-btn__icon"></i>
+        <span class="whatsapp-btn__tooltip">Fale Conosco</span>
+    </a>
+
+    <!-- JS Link -->
     <script src="src/script/script.js"></script>
 </body>
+
 </html>
