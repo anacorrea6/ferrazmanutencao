@@ -1,10 +1,11 @@
 'use client'
 import { useState, useEffect } from 'react'
-
+import { ArrowRight } from 'lucide-react'
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Cpu, Share2, Binary } from 'lucide-react'
 import { resolveImageUrl } from '@/utils/imageUrl'
+import Link from 'next/link'
 
 const DEFAULT_PROJECTS = [
     {
@@ -51,7 +52,8 @@ export default function Projects() {
                 const lista = Array.isArray(data) ? data : (data.dados || data.projetos || [])
                 setProjetos(lista)
             } catch (err) {
-                setErro(err.message)
+                console.error('Erro ao buscar projetos:', err)
+                setErro(err.message || 'Erro ao conectar ao servidor')
             } finally {
                 setCarregando(false)
             }
@@ -68,7 +70,8 @@ export default function Projects() {
         return <p className="text-center p-8 text-red-500">Erro: {erro}</p>
     }
 
-    const listToRender = projetos.length > 0 ? projetos : DEFAULT_PROJECTS
+    const baseList = projetos.length > 0 ? projetos : DEFAULT_PROJECTS
+    const listToRender = baseList.slice(0,3)
 
     return (
         <>
@@ -83,7 +86,8 @@ export default function Projects() {
                             // Grid para organizar os cards
                             <div className="projects__grid">
                                 {listToRender.map((projeto, index) => {
-                                    const categoryText = projeto.servico_titulo || projeto.categoria || projeto.titulo
+                                    const titleText = projeto.servico_titulo || projeto.categoria || projeto.titulo
+                                    const targetSlug = projeto.slug || projeto.id || index + 1
                                     const descText = projeto.resumo || projeto.descricao_detalhada || projeto.descricao
                                     const imgSrc = resolveImageUrl(
                                         projeto.imagem_capa || projeto.imagem,
@@ -93,18 +97,21 @@ export default function Projects() {
                                     return (
                                         <article key={projeto.id || index} className="project-card">
                                             <div className="project-card__header">
-                                                <span className="project-card__category">{categoryText}</span>
+                                                <span className="project-card__category">{titleText}</span>
                                             </div>
                                             <div className="project-card__img-container">
-                                                <img 
-                                                    src={imgSrc} 
-                                                    alt={projeto.titulo || categoryText} 
+                                                <img
+                                                    src={imgSrc}
+                                                    alt={projeto.titulo || titleText}
                                                     className="project-card__img"
                                                 />
                                             </div>
                                             <div className="project-card__body">
                                                 <p className="project-card__desc">{descText}</p>
                                             </div>
+                                            <Link href={`/projetos/${targetSlug}`} className="blog-card__link">
+                                                Ver projeto <ArrowRight className="blog-card__link-icon" />
+                                            </Link>
                                         </article>
                                     )
                                 })}

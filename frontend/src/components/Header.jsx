@@ -63,7 +63,7 @@ export default function Header() {
                     <ul className="nav__list">
                         <li className="nav__item">
                             <a 
-                                href="#home" 
+                                href="/#home" 
                                 className={`nav__link ${activeSection === 'home' ? 'nav__link--active' : ''}`}
                                 onClick={closeMenu}
                             >
@@ -72,7 +72,7 @@ export default function Header() {
                         </li>
                         <li className="nav__item">
                             <a 
-                                href="#servicos" 
+                                href="/#servicos" 
                                 className={`nav__link ${activeSection === 'servicos' ? 'nav__link--active' : ''}`}
                                 onClick={closeMenu}
                             >
@@ -81,7 +81,7 @@ export default function Header() {
                         </li>
                         <li className="nav__item">
                             <a 
-                                href="#projetos" 
+                                href="/#projetos" 
                                 className={`nav__link ${activeSection === 'projetos' ? 'nav__link--active' : ''}`}
                                 onClick={closeMenu}
                             >
@@ -90,7 +90,7 @@ export default function Header() {
                         </li>
                         <li className="nav__item">
                             <a 
-                                href="#blog" 
+                                href="/#blog" 
                                 className={`nav__link ${activeSection === 'blog' ? 'nav__link--active' : ''}`}
                                 onClick={closeMenu}
                             >
@@ -99,7 +99,7 @@ export default function Header() {
                         </li>
                         <li className="nav__item">
                             <a 
-                                href="#contato" 
+                                href="/#contato" 
                                 className={`nav__link ${activeSection === 'contato' ? 'nav__link--active' : ''}`}
                                 onClick={closeMenu}
                             >

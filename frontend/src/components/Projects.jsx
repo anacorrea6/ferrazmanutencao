@@ -61,7 +61,7 @@ export default function Projects({ projetos = [] }) {
                 </div>
                 <div className="projects__actions">
                     <a href="/projetos" target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--shadow">
-                        FALAR SOBRE SEU PROJETO
+                        VER MAIS PROJETOS
                     </a>
                 </div>
             </div>

@@ -1,29 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { resolveImageUrl } from '@/utils/imageUrl'
-
-const DEFAULT_ARTICLES = [
-    {
-        id: 1,
-        titulo: 'Como reduzir o tempo de ciclo de uma Injetora',
-        resumo: 'Saiba quais parâmetros impactam diretamente a produtividade da sua linha.',
-        imagem: '/img/blog_cycle_time.png',
-        slug: 'como-reduzir-tempo-de-ciclo-injetora'
-    },
-    {
-        id: 2,
-        titulo: 'Erro E04.00 em Inovance: principais causas',
-        resumo: 'Entenda como identificar e solucionar esse erro comum em inversores de frequência.',
-        imagem: '/img/blog_inovance_error.png',
-        slug: 'erro-e04-inovance-causas'
-    },
-    {
-        id: 3,
-        titulo: 'Como evitar quebra de correia sincronizada em Injetoras',
-        resumo: 'Dicas práticas de manutenção preditiva para aumentar a vida útil da correia.',
-        imagem: '/img/blog_belt_drive.png',
-        slug: 'evitar-quebra-correia-sincronizada-injetora'
-    }
-]
+import { DEFAULT_ARTICLES } from '@/data/defaultArticles'
 
 export default function Blog({ artigos = [] }) {
     const list = artigos.length > 0 ? artigos : DEFAULT_ARTICLES
@@ -45,7 +22,7 @@ export default function Blog({ artigos = [] }) {
                             <div className="blog-card__body">
                                 <h3 className="blog-card__title">{item.titulo}</h3>
                                 <p className="blog-card__desc">{item.resumo}</p>
-                                <a href={`#artigo-${item.id}`} className="blog-card__link">
+                                <a href={`/artigos/${item.slug || item.id}`} className="blog-card__link">
                                     Ler artigo <ArrowRight className="blog-card__link-icon" />
                                 </a>
                             </div>
@@ -53,7 +30,7 @@ export default function Blog({ artigos = [] }) {
                     ))}
                 </div>
                 <div className="blog__actions">
-                    <a href="https://wa.me/message/IFPDRYP2S3WLG1" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+                    <a href="/artigos" className="btn btn--primary">
                         VER TODOS OS ARTIGOS
                     </a>
                 </div>
@@ -61,3 +38,4 @@ export default function Blog({ artigos = [] }) {
         </section>
     )
 }
+
