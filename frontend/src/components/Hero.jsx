@@ -17,7 +17,7 @@ export default function Hero() {
                     <p className="hero__bullets">
                         Robôs Industriais • Injetoras • NR-12 • Retrofit • Programação CLP • IoT Industrial • Assistência Técnica
                     </p>
-                    <a href="https://wa.me/message/IFPDRYP2S3WLG1" target="_blank" rel="noopener noreferrer" className="hero__btn btn btn--cta">
+                    <a href="/FormOrcamento" target="_blank" rel="noopener noreferrer" className="hero__btn btn btn--cta">
                         SOLICITAR UM ORÇAMENTO <ArrowRight />
                     </a>
                 </div>

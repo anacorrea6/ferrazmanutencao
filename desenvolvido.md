@@ -36,3 +36,41 @@ A visualização e o alinhamento foram testados no navegador através do agente 
 Destaque da Hero e Header
 
 Destaque do Grid Social, Vantagens e Footer
+
+
+
+
+1. Verifique se as diretivas do Tailwind estão no CSS Global
+Abra o seu arquivo de estilo global (geralmente app/globals.css ou styles/globals.css) e garanta que ele tem o Tailwind importado no topo:
+
+Para Tailwind v3:
+
+CSS
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+Para Tailwind v4:
+
+CSS
+@import "tailwindcss";
+⚠️ Atenção: Certifique-se de que esse arquivo globals.css está sendo importado no seu layout.tsx (ou _app.tsx / index.js).
+
+2. Verifique o arquivo tailwind.config.js (ou .ts)
+Caso esteja usando Tailwind v3, o Tailwind precisa saber em quais pastas estão os seus componentes para aplicar as classes.
+
+Abra o arquivo tailwind.config.js e verifique a opção content:
+
+JavaScript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}", // Se os seus arquivos ficarem dentro da pasta 'src'
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}

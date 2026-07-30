@@ -87,7 +87,6 @@ export default async function HomePage() {
                 <Advantages />
             </main>
             <Footer />
-            <WhatsAppBtn />
         </>
     )
 }

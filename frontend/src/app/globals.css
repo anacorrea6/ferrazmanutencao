@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+
 /* ==========================================================================
    DESIGN SYSTEM & CUSTOM PROPERTIES
    ========================================================================== */
@@ -1527,4 +1533,77 @@ img {
         width: 24px;
         height: 24px;
     }
+}
+
+
+
+
+
+
+/* Fundo escurecido fixo que cobre toda a tela */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px); /* Desfoca o fundo para dar destaque */
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end; /* Empurra o painel para a direita */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* O painel lateral propriamente dito */
+.drawer {
+  width: 100%;
+  max-width: 480px; /* Largura ideal para formulários laterais */
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+  animation: slideInRight 0.3s ease-out;
+}
+
+.drawer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.drawer__close {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.drawer__body {
+  padding: 1.5rem;
+  overflow-y: auto; /* Permite rolar caso o conteúdo seja alto */
+  flex: 1;
+}
+
+/* Animações de entrada */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
