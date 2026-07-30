@@ -39,7 +39,7 @@ export default function Artigos() {
     }, [])
 
     const baseList = artigos.length > 0 ? artigos : DEFAULT_ARTICLES
-    const listToRender = baseList.slice(0,3)
+    const listToRender = baseList.slice(0, 3)
 
     return (
         <>
@@ -49,7 +49,7 @@ export default function Artigos() {
                 <section className="blog" id="blog" style={{ paddingTop: '140px', minHeight: '80vh' }}>
                     <div className="blog__container">
                         <h2 className="section-title">ARTIGOS DO BLOG</h2>
-                        
+
                         {carregando && (
                             <div className="artigos__message artigos__message--info">
                                 <p>Carregando Artigos...</p>

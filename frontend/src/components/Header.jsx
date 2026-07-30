@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import WhatsappButton from './WhatsappButton';
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false)
@@ -108,9 +109,14 @@ export default function Header() {
                         </li>
                     </ul>
                 </nav>
+<<<<<<< Updated upstream
                 <a href="/FormOrcamento" target="_blank" rel="noopener noreferrer" className="header__btn btn btn--primary">
+=======
+                {/*<a href="https://wa.me/message/IFPDRYP2S3WLG1" target="_blank" rel="noopener noreferrer" className="header__btn btn btn--primary">
+>>>>>>> Stashed changes
                     Solicitar Orçamento
-                </a>
+                </a>*/}
+                <WhatsappButton  className="header__btn btn btn--primary"/>
                 <button 
                     className={`nav-toggle ${menuOpen ? 'nav-toggle--active' : ''}`} 
                     onClick={toggleMenu} 
