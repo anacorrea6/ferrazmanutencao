@@ -23,7 +23,7 @@ export default function FormOrcamento() {
   const enviarParaWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const numeroWhatsApp = "5511969390437";
+    const numeroWhatsApp = "5511963940599";
 
     const mensagem = ` 🛠️ *NOVO PEDIDO DE ORÇAMENTO* 🛠️
 
